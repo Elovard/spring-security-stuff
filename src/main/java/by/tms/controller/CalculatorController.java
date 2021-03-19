@@ -26,6 +26,7 @@ public class CalculatorController {
     @PostMapping
     public ModelAndView postCalc (ModelAndView modelAndView, Operation oper){
         Operation result = calculatorService.getResult(oper);
+        modelAndView.setViewName("calculator");
         modelAndView.addObject("result", result);
         return modelAndView;
     }
